@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:web_pages/screens/home_screen.dart';
 import 'components.dart';
+import 'components/widget/skyline.dart';
 import 'core/utils/locale.dart';
 import 'core/utils/toast.dart';
 import 'generated/i18n.dart';
@@ -16,7 +17,7 @@ import 'utils/sputils.dart';
 void main() {
   // runApp(MyApp());
   WidgetsFlutterBinding.ensureInitialized();
-  initFirst().then((_) => runApp(Store.init(ToastUtils.init(MyApp2()))));
+  initFirst().then((_) => runApp(Store.init(ToastUtils.init(MyApp()))));
 }
 
 
@@ -31,10 +32,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'AI CAT',
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-      ),
-      home: Components(),
+      home: Skyline(),
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../api/other_repository.dart';
-// import '../../core/utils/route_util.dart';
+import '../../core/utils/route_util.dart';
 import '../../core/utils/utils.dart';
 import '../../model/hitokoto.dart';
 import '../../plugins/skip_down_time_progress.dart';
@@ -77,16 +77,16 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
 
     debugPrint("$firstOpen");
     if (!firstOpen) {
-      Get.offNamed(SPUtils.isLogined() ? '/home' : '/login');
-      /*if (SPUtils.isLogined()) {
+      //Get.offNamed(SPUtils.isLogined() ? '/home' : '/login');
+      if (SPUtils.isLogined()) {
         pushAndRemovePage(context, MainHomePage());
       } else {
         pushAndRemovePage(context, LoginPage());
-      }*/
+      }
     } else {
       SPUtils.saveIsFirstOpen(false);
-      //pushAndRemovePage(context, IntroSlidePage());
-      Get.offNamed('introSlide');
+      pushAndRemovePage(context, IntroSlidePage());
+      //Get.offNamed('introSlide');
     }
   }
 
