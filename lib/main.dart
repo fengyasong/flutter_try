@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:web_pages/screens/home_screen.dart';
 import 'components.dart';
 import 'components/widget/skyline.dart';
+import 'components/widget/zoom.dart';
 import 'core/utils/locale.dart';
 import 'core/utils/toast.dart';
 import 'generated/i18n.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'AI CAT',
-      home: Skyline(),
+      home: Scaffold(body: Zoom(child:Skyline())),
     );
   }
 }
